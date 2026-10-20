@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cattura app per REA"
+  short_description: "Raccoglie schermate, flussi e asset per REA"
+  default_prompt: "Usa $rea-app-capture per raccogliere le evidenze necessarie a riprodurre questa app con REA, riducendo al minimo i passaggi manuali."

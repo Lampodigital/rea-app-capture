@@ -1,0 +1,2 @@
+-r requirements-video.txt
+PyYAML>=6,<7
