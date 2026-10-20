@@ -5,6 +5,8 @@ description: Raccoglie schermate, flussi, gerarchie UI, video e asset pubblici d
 
 # Cattura app per REA
 
+Skill condivisa per Codex e Claude Code: usa gli strumenti disponibili nel client corrente. La cartella che contiene questo `SKILL.md` è `<skill-dir>`; risolvi riferimenti e script rispetto a quella cartella, indipendentemente dalla directory di lavoro. L’invocazione è `$rea-app-capture` in Codex e `/rea-app-capture` in Claude Code.
+
 Prepara un pacchetto verificabile che permetta a REA di ricostruire grafica e comportamento osservabile con il minimo intervento manuale. Rispondi nella lingua dell'utente. Procedi sulle attività già autorizzate; raggruppa soltanto i passaggi che richiedono davvero una persona.
 
 La raccolta e il dossier funzionano anche senza REA installato. In quel caso prepara il passaggio e dichiara che l’analisi REA non è stata eseguita. Gli script richiedono Python 3.10 o successivo; l’estrazione video richiede anche ffmpeg e Pillow, come descritto nel README.

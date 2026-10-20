@@ -1,10 +1,32 @@
 # rea-app-capture
 
-Skill per Codex che raccoglie le evidenze necessarie a riprodurre interfaccia e comportamento osservabile di un’app con Reverse Engineer Anything (REA).
+Skill per **Codex e Claude Code** che raccoglie le evidenze necessarie a riprodurre interfaccia e comportamento osservabile di un’app con Reverse Engineer Anything (REA).
 
 Combina osservazione diretta, gerarchie UI, screenshot degli store, asset ufficiali e fotogrammi da demo pubbliche. Quando le catture risultano nere, esegue una diagnosi limitata e usa fonti alternative, indicando le lacune.
 
 La raccolta funziona anche senza REA installato. L’analisi tramite REA richiede i suoi strumenti; il controllo di un iPhone richiede un bridge disponibile, ad esempio Appium/XCUITest/WebDriverAgent. La skill non installa automaticamente questi componenti e non contiene un controller iPhone autonomo. Screenshot e mockup non ricostruiscono automaticamente backend, codice nativo o sicurezza dell’app.
+
+## Installazione in Claude Code
+
+Clona il repository nella cartella delle skill personali:
+
+```sh
+git clone https://github.com/Lampodigital/rea-app-capture.git "$HOME/.claude/skills/rea-app-capture"
+```
+
+In Claude Code invoca:
+
+```text
+/rea-app-capture [nome o URL dell’app]
+```
+
+Per renderla disponibile soltanto in un progetto, esegui invece dalla radice del progetto:
+
+```sh
+git clone https://github.com/Lampodigital/rea-app-capture.git .claude/skills/rea-app-capture
+```
+
+Scegli una sola delle due posizioni per evitare copie divergenti. Il formato `SKILL.md`, con `name` e `description`, è condiviso dai due strumenti; non serve un plugin aggiuntivo. Per i dettagli sul caricamento consulta la [documentazione ufficiale di Claude Code](https://code.claude.com/docs/en/skills).
 
 ## Installazione in Codex
 
@@ -22,6 +44,14 @@ Invocazione:
 Usa $rea-app-capture su [nome o URL dell’app].
 Prepara un dossier per REA con schermate, flussi, fonti e dettagli da verificare.
 ```
+
+## Compatibilità
+
+Le istruzioni e gli script sono gli stessi su Codex e Claude Code. `agents/openai.yaml` contiene soltanto metadati di interfaccia per Codex; il funzionamento della skill non dipende da quel file. Non è necessario aggiungere un `CLAUDE.md` globale o cambiare le autorizzazioni del client.
+
+I browser, i server MCP e REA devono essere disponibili nel client che esegue la skill: una configurazione presente in Codex non viene trasferita automaticamente a Claude Code. Se REA non è collegato, entrambi possono preparare il dossier per una successiva analisi.
+
+I test verificano anche un’installazione isolata nelle cartelle di skill dei due client, eseguendo gli script da una directory esterna. Non avviano sessioni LLM né certificano il controllo di un dispositivo reale.
 
 ## Requisiti
 
