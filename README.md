@@ -8,7 +8,7 @@ La raccolta funziona anche senza REA installato. L’analisi tramite REA richied
 
 ## Installazione in Codex
 
-Con accesso al repository privato, clona la cartella tra le skill. Il comando rifiuta una destinazione già esistente:
+Clona il repository pubblico tra le skill, senza inviti o autenticazione GitHub. Il comando rifiuta una destinazione già esistente:
 
 ```sh
 git clone https://github.com/Lampodigital/rea-app-capture.git "$HOME/.codex/skills/rea-app-capture"
@@ -85,8 +85,8 @@ python -m unittest discover -s tests -v
 
 I test generano dati e brevi video sintetici in cartelle temporanee. Coprono schema e integrità dei manifest, derivazioni, percorsi equivalenti e confinamento, immagini corrotte, decodifica reale dei pixel e fallimenti dei video. GitHub Actions esegue la stessa suite; non usa segreti o dispositivi reali.
 
-## Condivisione privata
+## Condivisione
 
-Il repository è privato. Un link da solo non concede accesso: su GitHub apri **Settings → Collaborators → Add people** e invita gli account scelti. Non sono previsti inviti automatici. Non è inclusa una licenza di redistribuzione pubblica.
+Il repository è pubblico: puoi condividere il link per leggere le istruzioni e installare la skill. La visibilità pubblica non concede permessi di scrittura sul repository originale; le modifiche dirette richiedono un accesso autorizzato. Non è inclusa una licenza di redistribuzione pubblica.
 
 Questo repository contiene soltanto la skill e test sintetici. Conserva dossier delle app, media raccolti, credenziali, certificati e dati personali fuori dalla cartella Git. `.gitignore` riduce gli inserimenti accidentali, ma non sostituisce la revisione dei file prima di ogni commit.
